@@ -13,15 +13,17 @@ import CartContext from '../../store/cart-context';
 const Cart = ({ hide }) => {
   // Cart Context
   const cartCtx = useContext(CartContext);
-  let { items, totalAmount } = cartCtx;
+  let { items, totalAmount, addItem, removeItem } = cartCtx;
   totalAmount = `$${totalAmount.toFixed(2)}`;
 
   const cartItemRemoveHandler = id => {
     console.log(id);
+    removeItem(id);
   };
 
   const cartItemAddHandler = item => {
     console.log(item);
+    addItem({ ...item, amount: 1 });
   };
 
   const cartItems = (
