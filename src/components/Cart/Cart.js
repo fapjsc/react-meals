@@ -69,7 +69,7 @@ const Cart = ({ hide }) => {
         <span>{totalAmount}</span>
       </div>
 
-      {isCheckout && <Checkout />}
+      {isCheckout && <Checkout hide={hide} />}
       {!isCheckout && modalAction}
     </Modal>
   );

@@ -19,8 +19,6 @@ const AvailableMeals = () => {
       'https://react-meal-69b86-default-rtdb.asia-southeast1.firebasedatabase.app/meal.json'
     );
 
-    console.log(res);
-    // if (!res.ok) throw new Error(res.statusText);
     if (!res.ok) throw new Error('something went wrong');
 
     const resData = await res.json();
